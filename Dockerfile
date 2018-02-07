@@ -2,9 +2,14 @@ FROM ubuntu:17.10
 
 RUN apt-get update && apt-get upgrade -y
 
-RUN apt-get install -y libgl1-mesa-dev pkg-config
+RUN apt-get install -y libgl1-mesa-dev mesa-common-dev pkg-config
 
-COPY . src
+COPY cmake.init CMakeLists.txt
+COPY cmake cmake
+COPY init ./
 
-RUN cd src && ./init
+RUN ./init
 
+COPY pixel pixel/
+
+RUN ./init

@@ -2,7 +2,7 @@
 //
 
 #include "shadercheck.h"
-#include "pixel/pixel.h"
+#include <pixel/pixel.h>
 
 #include <iostream>
 
